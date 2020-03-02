@@ -14,17 +14,20 @@ namespace OmnicellXT
         public AppUser ModifiedBy { get; set; }
         public Dictionary<string, MedicationUnit> MedicationUnitStore { get; set; }
 
+        public int GetCapacity()
+        {
+            return this.UnitCapacity * this.NumberOfUnits;
+        }
 
         public void AddMedicationUnit(string medicationName)
         {
-            int capacity = this.UnitCapacity * this.NumberOfUnits;
             MedicationUnit medicationUnit = new MedicationUnit
             {
                 Name = medicationName,
                 MedicationId = medicationName.Length
             };
 
-            if (capacity > this.MedicationUnitStore.Count)
+            if (GetCapacity() > this.MedicationUnitStore.Count)
             {
                 this.MedicationUnitStore.Add(medicationUnit.Name, medicationUnit);
             }
@@ -34,17 +37,20 @@ namespace OmnicellXT
             }
         }
 
-        public bool RemoveMedicationUnit(string name)
-        {
-            return this.MedicationUnitStore.Remove(name);
+        public void RemoveMedicationUnit(string name)        
+        {            
+            this.MedicationUnitStore.Remove(name);
+
+            if (this.MedicationUnitStore.Count < (GetCapacity() * 0.20))
+            {
+                Console.WriteLine("Inventory is under 20%, considering placing an order");
+            }
         }
 
         public void ResetBin()
         {
             this.MedicationUnitStore = new Dictionary<string, MedicationUnit>();
         }
-    }
-
-  
+    }  
 }
 
