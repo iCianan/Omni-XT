@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace OmnicellXT
 {
-    public class Small : Bin
+    public class MediumBin : Bin
     {
-        public override int UnitCapacity => 5;
+        public override int UnitCapacity => 10;
 
-        public override int NumberOfUnits => 3;
+        public override int NumberOfUnits => 5;
 
-        public Small(AppUser user)
+        public MediumBin(AppUser user)
         {
             this.MedicationUnitStore = new Dictionary<string, MedicationUnit>();
             this.ModifiedDate = DateTime.Now;
