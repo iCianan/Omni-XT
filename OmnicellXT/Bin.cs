@@ -22,9 +22,7 @@ namespace OmnicellXT
             {
                 Name = medicationName,
                 MedicationId = medicationName.Length
-
             };
-
 
             if (capacity > this.MedicationUnitStore.Count)
             {

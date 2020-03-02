@@ -11,9 +11,9 @@ namespace OmnicellXT.Test
         {
             AppUser appUser = new AppUser { UserId = 0, UserName = "Tester" };
 
-            Cabinet LansingCabinet = new Cabinet(appUser);
+            Cabinet sut = new Cabinet(appUser);
 
-            Assert.That(LansingCabinet.SmallBin.UnitCapacity, Is.EqualTo(5));
+            Assert.That(sut.SmallBin.UnitCapacity, Is.EqualTo(5));
         }        
 
         [Test]
@@ -30,8 +30,8 @@ namespace OmnicellXT.Test
         public void SmallBinShouldDisplayCapacityMessageIfFull()
         {
             AppUser appUser = new AppUser { UserId = 0, UserName = "Tester" };
-
             Cabinet sut = new Cabinet(appUser);
+
             for (int i = 0; i < 15; i++)
             {
                 sut.SmallBin.AddMedicationUnit(i.ToString());

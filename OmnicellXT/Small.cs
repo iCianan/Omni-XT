@@ -14,7 +14,6 @@ namespace OmnicellXT
 
         public Small(AppUser user)
         {
-
             this.MedicationUnitStore = new Dictionary<string, MedicationUnit>();
             this.ModifiedDate = DateTime.Now;
             this.ModifiedBy = user;
