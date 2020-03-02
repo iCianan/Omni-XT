@@ -41,7 +41,7 @@ namespace OmnicellXT
         {            
             this.MedicationUnitStore.Remove(name);
 
-            if (this.MedicationUnitStore.Count < (GetCapacity() * 0.20))
+            if (this.MedicationUnitStore.Count <= (GetCapacity() * 0.20))
             {
                 Console.WriteLine("Inventory is under 20%, considering placing an order");
             }

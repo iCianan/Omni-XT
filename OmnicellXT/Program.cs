@@ -16,12 +16,14 @@ namespace OmnicellXT
             LansingCabinet.SmallBin.AddMedicationUnit("Ravicti");
             LansingCabinet.SmallBin.AddMedicationUnit("Takhzyro");
             LansingCabinet.SmallBin.AddMedicationUnit("Tegsedi");
+            LansingCabinet.SmallBin.RemoveMedicationUnit("Tegsedi");
             LansingCabinet.SmallBin.AddMedicationUnit("Kynamro");
             LansingCabinet.SmallBin.AddMedicationUnit("Chenodal");
             LansingCabinet.SmallBin.AddMedicationUnit("Tylenol");
             LansingCabinet.SmallBin.AddMedicationUnit("Claritin");
             LansingCabinet.SmallBin.AddMedicationUnit("Aleve");
             LansingCabinet.SmallBin.AddMedicationUnit("Dulcolax");
+            LansingCabinet.SmallBin.RemoveMedicationUnit("Aleve");
             LansingCabinet.SmallBin.AddMedicationUnit("Pepto-Bismol");
             LansingCabinet.SmallBin.AddMedicationUnit("Excedrin");
             LansingCabinet.SmallBin.AddMedicationUnit("Zantac");
